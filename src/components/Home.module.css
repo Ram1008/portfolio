@@ -1,0 +1,134 @@
+.container{
+    display: flex;
+    flex-flow: column;
+}
+.mainHeading{   
+    color: #333333;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+    text-align: center;
+    margin: 6vh;
+}
+.seg1{
+    height: 73vh;
+}
+.navigationWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+.introductionWrapper{
+    height: 57vh;
+    background-color: #E8601B;
+    display: flex;
+    justify-content: center;
+}
+.intro{
+    margin: 2vh 0 2vh 0;
+    width: 70vw;
+}
+.secondaryHeading{
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: large;
+    text-align: center;
+    margin: 4vh 0;   
+}
+.introDescription{
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-size: large;
+    text-align: center;
+    margin: 5vh 0 2vh 0;  
+}
+.contactButtonWrapper{
+    width: 10vw;
+    margin: 8vh auto;
+}
+.seg2{
+    display: flex;
+    justify-content: center;
+    height: 62vh;
+
+}
+.cardWrapper{
+    display: flex;
+    height: 80vh;
+    width: 65vw;
+    background-color: white;
+    margin-top: -6%;
+    padding: 1.25rem;
+    border-radius: 10px;
+    z-index: 10;
+}
+.card{
+    display: flex;
+    flex-flow: column;
+    flex-basis: 33.3333%;
+    margin: 1rem;
+}
+.cardIcon{
+    margin: 0 auto ;
+}
+.cardTitle{
+    margin : 1rem auto;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+}
+.cardDescription{
+    margin: 0 auto;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #333333;
+    font-weight: 500;
+}
+.cardSubHeading{
+    margin: 1rem auto;
+    color: #E8601B;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    font-weight: 600;
+}
+.cardSkills{
+    margin: 0 auto;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #333333;
+    font-weight: 500;
+}
+.cardItems{
+    margin: 0.5rem auto;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #333333;
+    font-weight: 500;
+}
+.seg3{
+    background-color: #E8601B;
+    height: 60vh;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+}
+.contactWrapper{
+    width: 40vw;
+    margin-top: 20vh; 
+}
+.footerNote{
+    margin : 3vh 0;
+    color: white;
+    font-size: x-large;
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+.footerIcon{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}

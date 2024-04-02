@@ -1,0 +1,18 @@
+.button{
+    color: #616060;
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    border: 2px solid #E8601B;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px 10px 5px 10px;
+    background-color: white ;
+    text-decoration: none;
+}
+
+.button:hover{
+    border-color: white;
+    background-color: #E8601B;
+    color: white;
+}

@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    border-radius: 50%;
+    box-shadow: 3px 0 3px 0 #a9a9a9;
+    height: 30vh;
+}

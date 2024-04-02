@@ -1,0 +1,9 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh 2vw;
+    text-decoration: none;
+}
+.logo{
+    height: 7vh;
+}

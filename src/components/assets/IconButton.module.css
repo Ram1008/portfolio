@@ -1,0 +1,8 @@
+.icon{
+    height: 4vh;
+    width: 2vw;
+    border-radius: 30%;
+    
+    border: 3px solid white;
+    cursor: pointer;
+}
