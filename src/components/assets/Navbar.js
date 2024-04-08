@@ -7,7 +7,9 @@ const Navbar = () => {
   return (
     <nav className={Styles.navbar}>
                 <Link to='/'><img className={Styles.logo} src = {MyLogo} alt = 'logo'/></Link>
-                <Link to='/connect' style={{ textDecoration: 'none' }}><Button name = {"Let's connect"}/></Link>
+                <Link to='/connect' className={Styles.buttonWrapper}>
+                  <Button name = {"Let's connect"}/>
+                  </Link>
             </nav>
   )
 }

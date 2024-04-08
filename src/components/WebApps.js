@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import {WebData} from './data/WebData';
 import Navbar from './assets/Navbar';
 import Button from './assets/Button';
@@ -36,10 +37,11 @@ const WebApps = () => {
                         {WebData[currentPage].description}
                     </div>
                     <div style={{display: 'flex'}}>
-                      <div  style={{marginRight: '2rem'}}>
-                        <Button  name = 'View App'/></div>
-                        <div>
-                        <Button name = 'View Github'/></div>
+                      <div style={{margin:'5px'}} >
+                      {WebData[currentPage].appLink && <Link to ={WebData[currentPage].link} target='_blank'><Button  name = 'View App'/></Link>}
+                      </div>
+                      <div style={{margin:'5px'}}>
+                        {WebData[currentPage].gitLink && <Link to ={WebData[currentPage].gitLink} target='_blank'><Button name = 'View Github'/></Link>}</div>
                     </div>
                 </div>
         </div>

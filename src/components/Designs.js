@@ -3,6 +3,7 @@ import {DesignData} from './data/DesignData';
 import Navbar from './assets/Navbar';
 import Button from './assets/Button';
 import Styles from "./Designs.module.css";
+import { Link } from 'react-router-dom';
 
 const Designs = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -35,7 +36,7 @@ const Designs = () => {
                         {DesignData[currentPage].description}
                     </div>
                     <div>
-                        <Button name = 'View Figma'/>
+                        <Link to ={DesignData[currentPage].link} target='_blank'><Button name = 'View Figma'/></Link>
                     </div>
                 </div>
             </div>

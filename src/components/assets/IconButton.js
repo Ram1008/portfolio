@@ -1,8 +1,9 @@
-import React from 'react'
-import Styles from './IconButton.module.css'
+import React from 'react';
+import Styles from './IconButton.module.css';
+import { Link } from 'react-router-dom';
 const IconButton = (props) => {
   return (
-        <img className = {Styles.icon}src={props.link} alt='contact'/>
+        <Link to ={props.contact.link} target='_blank'><img className = {Styles.icon} src={props.contact.icon} alt='contact'/></Link>
   )
 }
 

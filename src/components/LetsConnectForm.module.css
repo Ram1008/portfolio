@@ -61,3 +61,25 @@
     width: 10vw;
     margin: auto;
 }
+@media screen and (max-width: 710px) {
+    .container{
+        width: 80%;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+    }
+    .form{
+        margin-top: 8%;
+        align-items: center;
+    }
+    .message{
+        margin: 0;
+    }
+    .buttonWrapper{
+        width: 20vw;
+        margin: 4% auto;
+    }
+}

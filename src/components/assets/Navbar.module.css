@@ -5,5 +5,18 @@
     text-decoration: none;
 }
 .logo{
-    height: 7vh;
+    height: 5vh;
+}
+.buttonWrapper{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+@media screen and (max-width: 710px) {
+    .navbar{
+        margin: 3vh 2%;
+    }
+    .buttonWrapper{
+        margin: 0 2%;
+    }
 }

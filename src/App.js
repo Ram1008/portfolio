@@ -3,6 +3,8 @@ import Home from "./components/Home";
 import LetsConnectForm from "./components/LetsConnectForm";
 import Designs from "./components/Designs";
 import WebApps from "./components/WebApps";
+import About from './components/About';
+import Seek from './components/Seek';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
@@ -12,7 +14,8 @@ const App = () => {
         <Route exact path="/connect" element={<LetsConnectForm />} />
         <Route exact path="/designs" element={<Designs />} />
         <Route exact path="/webapps" element={<WebApps />} />
-
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/seek" element={<Seek />} />
       </Routes>
     </BrowserRouter>
   )

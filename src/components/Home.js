@@ -1,23 +1,21 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { Link } from 'react-router-dom';
 import Button from './assets/Button';
-import facebookIcon from '../assets/facebookIcon.svg';
-import gmailIcon from '../assets/gmailIcon.svg';
-import linkedinIcon from '../assets/linkedinIcon.svg';
-import githubIcon from '../assets/githubIcon.svg';
 import designIcon from '../assets/designIcon.svg';
 import developerIcon from '../assets/developerIcon.svg';
 import seekerIcon from '../assets/seekerIcon.svg';
 import noLook from '../assets/noLook.png';
 import CenterImage from './assets/CenterImage';
 import CircularButton from './assets/CircularButton';
-import { designTools, developerTools, seekerExperiences } from './data/HomeData';
+import { designTools, developerTools, seekerExperiences, contacts } from './data/HomeData';
 import Navbar from './assets/Navbar';
 import IconButton from './assets/IconButton';
 import Styles from './Home.module.css';
-
 const Home = () => {
-  const contacts = [linkedinIcon, githubIcon, gmailIcon, facebookIcon];
+  const contactRef = useRef(null);
+  const contactClick = () =>{
+    contactRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <div className={Styles.container}>
         <Navbar/>
@@ -25,14 +23,16 @@ const Home = () => {
         <CenterImage/>
             
             <div className={Styles.mainHeading}>
-              Designer, Web Developer & Seeker 
+              <span style={{'--i': 1}}> Designer,  </span>
+              <span style={{'--i': 2}}> Web Developer </span>
+              <span style={{'--i': 3}}> & Seeker </span>
             </div>
             
             <div className={Styles.navigationWrapper}>
-                <CircularButton name = {"About me"}/> 
+                <Link  style={{ textDecoration: 'none' }} to='/about'><CircularButton name = {"About me"}/> </Link>
                 <Link  style={{ textDecoration: 'none' }} to='/designs'><CircularButton name = {"Designs"}/></Link>
                 <Link  style={{ textDecoration: 'none' }} to='/webapps'><CircularButton name = {"Web Apps"}/></Link>
-                <CircularButton link = {noLook}/>
+                <Link  style={{ textDecoration: 'none' }} to='/seek'><CircularButton link = {noLook}/></Link>
             </div>
         </div>
         <div className={Styles.introductionWrapper}>
@@ -43,12 +43,12 @@ const Home = () => {
               <div className={Styles.introDescription}>
                   Mastering the art to code, I transform ideas into stunning online experiences.
                   I value sophisticated designs, flawless functionality,  elegant style
-                  and precision. Let's collaborate and build your digital masterpiece together. 
+                  and precision. Let's collaborate and build your digital masterpiece together. <br/>
                   I am fresh in the field but my quiet confidence, curious nature and willingness to learn 
                   solves my problems consistently.  
               </div>
               <div className={Styles.contactButtonWrapper}>
-                <Button name = {"Contact"}/> 
+                <Button name = {"Contact"} click={contactClick}/> 
               </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Home = () => {
                  Designer
               </div>
               <div className={Styles.cardDescription}>
-                I believe design is a way to express the beauty of one’s nature.I value simplicity, interactive designand well thought out patterns.
+                I believe design is a way to express the beauty of one’s nature. I value simplicity, interactive design and user experience through well thought out patterns.
               </div>
               <div className={Styles.cardSubHeading}>
                 Things I enjoy designing:
@@ -120,7 +120,7 @@ const Home = () => {
                 Seeker
               </div>
               <div className={Styles.cardDescription}>
-              I seek to understand the greater meaning of life. which is beyond just gathering, maintenance and life support.  
+              I seek to understand the greater meaning of life. which is, I believe beyond just gathering, maintenance and life support.  
               </div>
               <div className={Styles.cardSubHeading}>
                   Side rocks I turn:
@@ -143,16 +143,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className={Styles.seg3}>
-            {/* <div className='w-full flex justify-center'> */}
+        <div className={Styles.seg3} ref={contactRef}>
               <div className={Styles.contactWrapper}>
                 <div className={Styles.footerNote}>
                   Living, Learning & Leveling up <br/>  at once.
                 </div>
                 <div className={Styles.footerIcon}>
                   {
-                    contacts.map((contact)=>
-                      <IconButton key = {contact} link= {contact}/>
+                    contacts.map((contact, idx)=>
+                      <IconButton key = {idx} contact= {contact}/>
                     )
                   }
                   
@@ -161,7 +160,6 @@ const Home = () => {
                   Crafted & nurtured by me 	&copy; 2024
                 </div>
               </div>
-            {/* </div> */}
         </div>
     </div>
   )

@@ -1,14 +1,20 @@
-.container{
+.container {
     width: 6vw;
     height: 12vh;
-    margin: 2vh 3vw 2vh 3vw;
+    margin: 2vh 3vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #E8601B;
     box-shadow: 3px 0 3px 0 #a9a9a9;
-}
+    transition: transform 0.1s ease; /* Add transition for smooth scaling */
+  }
+  
+  .container:hover {
+    transform: scale(1.05); /* Increase size by 2% */
+  }
+  
 .text{
     font-family: "Barlow", sans-serif;
     color: black;
@@ -19,4 +25,13 @@
 .icon{
     height: 8vh;
     width: 4vw;
+}
+@media screen and (max-width: 710px) {
+  .container {
+    width: 20vw;
+    margin: 0 2vw;
+  }
+  .icon{
+    width: 10vw;
+}
 }

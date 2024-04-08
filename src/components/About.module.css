@@ -1,0 +1,141 @@
+.container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.seg1{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+.seg1Title{   
+    color: #333333;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    text-align: center;
+}
+.seg1Content{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    margin: 2%;
+}
+.school{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 5%;
+    gap: 5%;
+}
+.schoolLogo{
+    height: 25%;
+    width: 25%;
+}
+.schoolDescription{
+    height: 40%;
+    width: 80%;
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-size: smaller;
+    margin: 4% 0;
+    text-align: center;
+}
+.schoolName{
+    color: #E8601B;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.verticalBar {
+    position: relative;
+    width: 10px;
+    background-color: #E8601B;
+    border-radius: 12px;
+}
+.circularDot {
+    position: absolute;
+    width: 15px; /* Diameter of the dot */
+    height: 15px;
+    background-color: #E8601B; /* Color of the dot */
+    border-radius: 50%; /* Makes it a circle */
+  }
+  
+  /* Positioning the dots */
+  .startDot {
+    top: 12%; /* Distance from the top */
+    left: 50%; /* Positioning at the center horizontally */
+    transform: translateX(-50%); /* Centers the dot horizontally */
+  }
+  
+  .endDot {
+    bottom: 12%; /* Distance from the bottom */
+    left: 50%; /* Positioning at the center horizontally */
+    transform: translateX(-50%); /* Centers the dot horizontally */
+  }
+  .seg2{
+    display: flex;
+    flex-flow: column;
+    background-color: #E8601B;
+}
+.seg2Title{
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: xx-large;
+    text-align: center;
+    margin: 3%;
+}
+.achivements1{
+    display: flex;
+    justify-content: center;
+}
+.achivementsItem{
+    height: 20%;
+    width: 20%;
+    margin: 3% 5%;
+    border-radius: 15px;
+}
+.myPhoto{
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+    margin: 3% 5%;
+}
+.achivements2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media screen and (max-width: 710px) {
+    .seg1Content{
+        height: 70vh;
+        margin: 5% 0;
+    }
+    .school{
+        margin:0;
+    }
+    .schoolLogo{
+        height: 15%;
+        width: 30%;
+    }
+    .schoolDescription{
+        height: 65%;
+        width: 85%;
+        
+    }
+    .startDot {
+        top: 6%;
+        
+      }
+      
+      .endDot {
+        bottom: 4%;
+      }
+      .schoolName{
+       margin: 0 3%;
+    }
+}

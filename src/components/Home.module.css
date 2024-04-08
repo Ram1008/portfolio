@@ -1,17 +1,32 @@
 .container{
     display: flex;
     flex-flow: column;
+    justify-content: center;
 }
 .mainHeading{   
-    color: #333333;
     font-family: "Barlow", sans-serif;
     font-weight: 700;
     font-size: xx-large;
     text-align: center;
     margin: 6vh;
+    position: relative;
+    white-space: pre;
 }
+.mainHeading span {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #333333;
+    animation: flip 3s infinite;
+    animation-delay: calc(.1s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
 .seg1{
-    height: 73vh;
+    height: 75vh;
 }
 .navigationWrapper{
     display: flex;
@@ -46,6 +61,8 @@
 .contactButtonWrapper{
     width: 10vw;
     margin: 8vh auto;
+    display: flex;
+    justify-content: center;
 }
 .seg2{
     display: flex;
@@ -59,7 +76,7 @@
     width: 65vw;
     background-color: white;
     margin-top: -6%;
-    padding: 1.25rem;
+    padding: 2% 1%;
     border-radius: 10px;
     z-index: 10;
 }
@@ -67,7 +84,7 @@
     display: flex;
     flex-flow: column;
     flex-basis: 33.3333%;
-    margin: 1rem;
+    margin: 1rem 2%;
 }
 .cardIcon{
     margin: 0 auto ;
@@ -131,4 +148,34 @@
     display: flex;
     justify-content: space-between;
     padding: 1.5rem;
+}
+@media screen and (max-width: 710px) {
+    .mainHeading {
+        font-size: large;
+        margin: 3vh;
+        white-space: normal; 
+    }
+    .navigationWrapper{
+        margin-top: 6vh;
+    }
+    .intro {
+        width: 100%;
+    }
+
+    .cardWrapper {
+        width: 100%;
+    }
+
+    .contactWrapper {
+        width: 80vw;
+    }
+    .introDescription{
+        margin: 5vh 2% 1vh 2%;  
+    }
+    .contactButtonWrapper{
+        width: 20vw;
+        margin: 5vh auto;
+        display: flex;
+        justify-content: center;
+    }
 }

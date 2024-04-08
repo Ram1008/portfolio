@@ -32,6 +32,7 @@
     align-items: center;
 }
 .thumbnailWrapper{
+    display: flex;
     border: 2px solid black;
     background-color: black;
     width: 40%;
@@ -40,7 +41,7 @@
     align-items: center;
 }
 .thumbnail{
-    height: 95%;
+    height: 90%;
     width: 100%;
 }
 .descriptionWrapper{
@@ -82,4 +83,26 @@
 .circlularButton:active {
     transform: scale(1.1); 
   }
+  @media screen and (max-width: 710px) {
+    .productWrapper{
+        flex-direction: column;
+        height: 90%;
+    }
+    .segment{
+        height: 70vh;
+    }
+    .thumbnailWrapper{
+        width: 100%;
+        height: 30%;
+    }
+    .descriptionWrapper{
+        width: 100%;
+        margin: 2% 0;
+        height: 100%;
+        gap: 2%;
+    }
+    .paginationWrapper{
+        /* margin-top: 5%; */
+    }
+}
   
