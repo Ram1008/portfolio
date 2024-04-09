@@ -101,8 +101,8 @@
         height: 100%;
         gap: 2%;
     }
-    .paginationWrapper{
-        /* margin-top: 5%; */
+    .circularButton{
+        margin: 0 20px;
     }
 }
   

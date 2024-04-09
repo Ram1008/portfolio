@@ -138,4 +138,14 @@
       .schoolName{
        margin: 0 3%;
     }
+    .achivementsItem{
+        height: 30%;
+        width: 30%;
+        margin: 3% 2%;
+    }
+    .myPhoto{
+        height: 30%;
+        width: 30%;
+        margin: 3% 2%;
+    }
 }

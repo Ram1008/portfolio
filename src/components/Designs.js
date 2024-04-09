@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {DesignData} from './data/DesignData';
 import Navbar from './assets/Navbar';
 import Button from './assets/Button';
 import Styles from "./Designs.module.css";
 import { Link } from 'react-router-dom';
+import Hammer from 'hammerjs';
 
 const Designs = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -18,9 +19,20 @@ const Designs = () => {
     const newPage = (currentPage - 1 + totalPages) % totalPages;
     setCurrentPage(newPage);
   };
-
+  useEffect(() => {
+    const container = document.getElementById('designsContainer');
+    const mc = new Hammer.Manager(container);
+    mc.add(new Hammer.Swipe());
+    mc.on("swiperight", handlePrevClick);
+    mc.on("swipeleft", handleNextClick);
+    return () => {
+        mc.off("swiperight", handlePrevClick);
+        mc.off("swipeleft", handleNextClick);
+        mc.destroy();
+      };
+    }, [currentPage]);
   return (
-    <div className={Styles.container}>
+    <div id="designsContainer" className={Styles.container}>
         <Navbar/>
         <div className={Styles.mainHeading}>Design Projects</div>
         <div className={Styles.segment}>
