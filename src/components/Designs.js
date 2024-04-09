@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {DesignData} from './data/DesignData';
 import Navbar from './assets/Navbar';
 import Button from './assets/Button';
@@ -11,14 +11,15 @@ const Designs = () => {
 
   const totalPages = Math.ceil(DesignData.length);
 
-  const handleNextClick = () => {
-    const newPage = (currentPage +1) % totalPages;
+  const handleNextClick = useCallback(() => {
+    const newPage = (currentPage + 1) % totalPages;
     setCurrentPage(newPage);
-  };
-  const handlePrevClick = () => {
+  }, [currentPage, totalPages]);
+
+  const handlePrevClick = useCallback(() => {
     const newPage = (currentPage - 1 + totalPages) % totalPages;
     setCurrentPage(newPage);
-  };
+  }, [currentPage, totalPages]);
   useEffect(() => {
     const container = document.getElementById('designsContainer');
     const mc = new Hammer.Manager(container);
@@ -30,7 +31,7 @@ const Designs = () => {
         mc.off("swipeleft", handleNextClick);
         mc.destroy();
       };
-    }, [currentPage]);
+    }, [currentPage, handlePrevClick, handleNextClick]);
   return (
     <div id="designsContainer" className={Styles.container}>
         <Navbar/>

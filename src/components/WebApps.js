@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { Link } from 'react-router-dom';
 import {WebData} from './data/WebData';
 import Navbar from './assets/Navbar';
@@ -11,14 +11,15 @@ const WebApps = () => {
 
   const totalPages = Math.ceil(WebData.length);
 
-  const handleNextClick = () => {
-    const newPage = (currentPage +1) % totalPages;
+  const handleNextClick = useCallback(() => {
+    const newPage = (currentPage + 1) % totalPages;
     setCurrentPage(newPage);
-  };
-  const handlePrevClick = () => {
+  }, [currentPage, totalPages]);
+
+  const handlePrevClick = useCallback(() => {
     const newPage = (currentPage - 1 + totalPages) % totalPages;
     setCurrentPage(newPage);
-  };
+  }, [currentPage, totalPages]);
   useEffect(() => {
     const container = document.getElementById('designsContainer');
     const mc = new Hammer.Manager(container);
@@ -30,7 +31,7 @@ const WebApps = () => {
         mc.off("swipeleft", handleNextClick);
         mc.destroy();
       };
-    }, [currentPage]);
+    }, [currentPage, handlePrevClick, handleNextClick]);
 
   return (
     <div id="designsContainer" className={Styles.container}>
