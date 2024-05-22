@@ -37,6 +37,7 @@ const Tools = () => {
     setPassword(cypherText);
     resetForm();
   };
+  
 
   const handleKnowMore = () =>{
     setShowModal(true);

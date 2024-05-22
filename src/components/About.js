@@ -47,15 +47,7 @@ const About = () => {
             <div className={Styles.seg2Title}>
                 Achivements
             </div>
-            <div className={Styles.achivements1}>
-                
-                <img className={Styles.achivementsItem} src = {JavaCertificate} alt = "me"/>
-                <img className={Styles.myPhoto} src = {MyPhoto} alt = "me"/>
-                <img className={Styles.achivementsItem} src = {BlackBeltCertificate} alt = "me"/>
-                
-                
-            </div>
-            <div className={Styles.achivements2}>
+            <div className={Styles.achivements}>
                 {
                     achivements.map(achivement =>
                         <img key={achivement} className={Styles.achivementsItem} src = {achivement} alt = "me"/>
