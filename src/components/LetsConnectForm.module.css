@@ -14,7 +14,7 @@
     font-family: "Barlow", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: x-large;
+    font-size: large;
     text-align: center;
 }
 
@@ -39,6 +39,7 @@
     border-radius: 10px;
     padding-left: 12px;
     border: none;
+    
 }
 .messageField{
     background-color: #ECECEC;

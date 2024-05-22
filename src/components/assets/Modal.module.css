@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E8601B;
+    border-radius: 10px;;
+    width: 90%;
+    margin: 1rem auto;
+    box-shadow: 0 3px 3px 0 #a9a9a9;
+}
+.contentWrapper{
+    margin: 0.5rem 0.5rem ;
+}
+.title{
+    margin: 1rem auto;
+    color: #E8601B;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    font-weight: 600;
+}
+.description{
+    margin: 1rem ;
+    font-family: "Barlow", sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #333333;
+    font-weight: 500;
+}

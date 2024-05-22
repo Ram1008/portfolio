@@ -4,7 +4,7 @@ import Button from './assets/Button';
 import designIcon from '../assets/designIcon.svg';
 import developerIcon from '../assets/developerIcon.svg';
 import seekerIcon from '../assets/seekerIcon.svg';
-import noLook from '../assets/noLook.png';
+// import noLook from '../assets/noLook.png';
 import CenterImage from './assets/CenterImage';
 import CircularButton from './assets/CircularButton';
 import { designTools, developerTools, seekerExperiences, contacts } from './data/HomeData';
@@ -32,7 +32,8 @@ const Home = () => {
                 <Link  style={{ textDecoration: 'none' }} to='/about'><CircularButton name = {"About me"}/> </Link>
                 <Link  style={{ textDecoration: 'none' }} to='/designs'><CircularButton name = {"Designs"}/></Link>
                 <Link  style={{ textDecoration: 'none' }} to='/webapps'><CircularButton name = {"Web Apps"}/></Link>
-                <Link  style={{ textDecoration: 'none' }} to='/seek'><CircularButton link = {noLook}/></Link>
+                <Link  style={{ textDecoration: 'none' }} to='/tools'><CircularButton name = {"Tools"}/></Link>
+                {/* <Link  style={{ textDecoration: 'none' }} to='/seek'><CircularButton link = {noLook}/></Link> */}
             </div>
         </div>
         <div className={Styles.introductionWrapper}>
