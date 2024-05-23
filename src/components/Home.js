@@ -11,6 +11,7 @@ import { designTools, developerTools, seekerExperiences, contacts } from './data
 import Navbar from './assets/Navbar';
 import IconButton from './assets/IconButton';
 import Styles from './Home.module.css';
+
 const Home = () => {
   const contactRef = useRef(null);
   const contactClick = () =>{

@@ -3,9 +3,6 @@ import Navbar from './assets/Navbar';
 import Styles from "./About.module.css";
 import SchoolLogo from '../assets/schoolLogo.png';
 import CollegeLogo from '../assets/collegeLogo.png';
-import MyPhoto from '../assets/myPhoto.jpeg';
-import BlackBeltCertificate from '../assets/blackBeltCertificate.jpg';
-import JavaCertificate from '../assets/javaCertificate.png';
 import {achivements} from './data/AboutData';
 const About = () => {
   return (
@@ -59,4 +56,4 @@ const About = () => {
   )
 }
 
-export default About
+export default About;

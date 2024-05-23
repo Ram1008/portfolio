@@ -15,9 +15,7 @@ const validationSchema = Yup.object().shape({
 const LetsConnectForm = () => {
   const navigate = useNavigate();
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    // Simulate API call
     setTimeout(() => {
-      // console.log(values);
       resetForm();
       setSubmitting(false);
       navigate('/');
