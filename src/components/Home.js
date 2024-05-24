@@ -31,7 +31,7 @@ const Home = () => {
             
             <div className={Styles.navigationWrapper}>
                 <Link  style={{ textDecoration: 'none' }} to='/webapps'><CircularButton name = {"Web Apps"}/></Link>
-                <Link  style={{ textDecoration: 'none' }} to='/tools'><CircularButton name = {"Tools"}/></Link>
+                <Link  style={{ textDecoration: 'none' }} to='/password-lookup'><CircularButton name = {"Tools"}/></Link>
                 <Link  style={{ textDecoration: 'none' }} to='/designs'><CircularButton name = {"Designs"}/></Link>
                 <Link  style={{ textDecoration: 'none' }} to='/about'><CircularButton name = {"About me"}/> </Link>
                 {/* <Link  style={{ textDecoration: 'none' }} to='/seek'><CircularButton link = {noLook}/></Link> */}

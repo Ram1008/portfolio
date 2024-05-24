@@ -14,6 +14,7 @@ const validationSchema = Yup.object().shape({
 const Tools = () => {
   const [password, setPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   const modalTitle = "What it does?";
   const modalDescription = "Introducing the Ultimate Password Generator! Passwords these days have become too messy to remember. Uppar case, lower case, numeric, special character😖😰. Secure your accounts with unique, customized passwords generated from any simple name or any such text of any desired length (8 by default). This tool uses Secure Hash Algorithm (SHA-256) from SHA family to produce consistent, alphanumeric, and special character-rich passwords, ensuring maximum security. Simply enter your string and choose the length – our generator does the rest, providing a strong, repeatable password every time. The best part you don't need to remember it just use the same name of you friend you used last time, offcourse same length and you get exact same password every time";
   const generateHash = async (input, length) => {
@@ -41,7 +42,13 @@ const Tools = () => {
 
   const handleKnowMore = () =>{
     setShowModal(true);
-  }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(password);
+    console.log(password)
+    setIsCopied(true);
+  };
 
   return (
     <div className={Styles.container}>
@@ -49,7 +56,7 @@ const Tools = () => {
             No cavemen ever hunted a bear with his intelligence. But his tools!
         </div>
         <div className={Classes.mainHeading} >
-          Password Generator
+          Password Lookup
         </div>
         <div className={Classes.silentHeading} style={{margin: '0.8rem 0px'}}>
             You think it generate's random text! 😂😂😂 <button onClick = {handleKnowMore} style={{color:"#E8601B", border:"none", backgroundColor:"white", cursor:"pointer"}}>Know More</button>
@@ -111,9 +118,10 @@ const Tools = () => {
           )}
         </Formik>
       </div>
-      <div className={Styles.detailsField} style={{margin:"2rem auto", width: '50%'}}>
+      <div className={Styles.detailsField} style={{margin:"2rem auto 1px", width: '50%'}} onClick={copyToClipboard}>
           {password}
       </div>
+      {isCopied ? <div style={{textAlign:"center", color: 'green', fontSize: "small"}}>Copied to clipboard</div>:  <div style={{textAlign:"center", color: 'red', fontSize: "small"}}>Click text to copy</div>}
       </> : <Modal title = {modalTitle} description = {modalDescription} setShowModal = {setShowModal}/>}
     </div>
   )

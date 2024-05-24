@@ -17,7 +17,7 @@ const App = () => {
           <Route exact path="/webapps" element={<WebApps />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/seek" element={<Seek />} />
-          <Route exact path="/tools" element={<Tools />} />
+          <Route exact path="/password-lookup" element={<Tools />} />
         
       </Routes>
     </BrowserRouter>
