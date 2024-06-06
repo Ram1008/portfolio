@@ -1,10 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import CenterImage from './assets/CenterImage';
 import Button from './assets/Button';
 import Styles from './LetsConnectForm.module.css';
+import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required').max(100),
@@ -13,13 +15,29 @@ const validationSchema = Yup.object().shape({
 });
 
 const LetsConnectForm = () => {
-  const navigate = useNavigate();
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      resetForm();
-      setSubmitting(false);
-      navigate('/');
-    }, 500);
+    const { name, email, message } = values;
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs.send('service_rx2fgjb', 'template_empatzr', templateParams, 'IR8mmuURfstZEi51Q')
+      .then((response) => {
+        resetForm();
+        setSubmitting(false);
+        toast.success("Got your message, Thanks!", {
+          autoClose: 3000,
+          style: { backgroundColor: '#efac8a', color: '#ffffff' }
+        });
+      }, (error) => {
+        setSubmitting(false);
+        toast.error("Oops! Please try again.", {
+          autoClose: 3000,
+          style: { backgroundColor: '#efac8a', color: '#ffffff' }
+        });
+      });
   };
 
   return (
